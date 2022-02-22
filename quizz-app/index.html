@@ -11,28 +11,25 @@
         <script src="script.js" defer></script>
     </head>
     <body>
-        <div class="quiz-container">
+        <div class="quiz-container" id="quiz">
             <div class="quiz-header">
-                <h2>Questions</h2>
+                <h2 id="question">Questions</h2>
                 <ul>
                     <li>
-                        <input type="radio" id="a" name="answer"><label for="a">Question</label>
+                        <input type="radio" id="a" class="answer" name="answer"><label id="a_text" for="a">Question</label>
                     </li>
                     <li>
-                        <input type="radio" id="b" name="answer"><label for="b">Question</label>
+                        <input type="radio" id="b" class="answer" name="answer"><label id="b_text" for="b">Question</label>
                     </li>
                     <li>
-                        <input type="radio" id="c" name="answer"><label for="c">Question</label>
+                        <input type="radio" id="c" class="answer" name="answer"><label id="c_text" for="c">Question</label>
                     </li>
                     <li>
-                        <input type="radio" id="d" name="answer"><label for="d">Question</label>
-                    </li>
-                    <li>
-                        <input type="radio" id="e" name="answer"><label for="e">Question</label>
+                        <input type="radio" id="d" class="answer" name="answer"><label id="d_text" for="d">Question</label>
                     </li>
                 </ul>
             </div>
-            <button>Vérifier résultats</button>
+            <button id="submit">Vérifier résultats</button>
         </div>
 
     </body>
