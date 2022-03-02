@@ -10,6 +10,7 @@ body {
     flex-wrap: wrap;
     font-family: 'Poppins', sans-serif;
     margin: 0;
+    padding-top: 3rem;
 }
 
 .add {
@@ -26,6 +27,7 @@ body {
 
 .note {
     background-color: white;
+    box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.1);
     margin: 20px;
     height: 400px;
     width: 400px;
@@ -49,7 +51,7 @@ body {
 }
 
 .note .main {
-    background-color: white;
+    background-color: #eee;
     overflow: hidden;
     height: 400px;
     width: 100%;
