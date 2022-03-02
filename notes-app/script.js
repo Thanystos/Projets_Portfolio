@@ -17,6 +17,8 @@ function addNewNote(text = '') {
     const note = document.createElement('div');
     note.classList.add('note');
 
+    // Le ternaire indique que si on a pu récupérer du texte dans le LS alors on affichera la version marked
+    // Sinon on affichera le textarea afin de pouvoir en entrer
     note.innerHTML = `
         <div class="notes">
             <div class="tools">
