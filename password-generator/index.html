@@ -6,11 +6,41 @@
               content="width=device-width, 
               initial-scale=1.0"
         >
-        <title>Title</title>
+        <title>Password Generator</title>
         <link rel="stylesheet" href="style.css">
         <script src="script.js" defer></script>
     </head>
     <body>
-        <h1>Bien le bonjour !...</h1>
+        <div class="pw-container">
+            <div class="pw-header">
+                <div class="pw" id="pw">
+                    bépoèôvdljauie,
+                    <button id="copy">Copier</button>
+                </div>
+            </div>
+            <div class="pw-body">
+                <div class="form-control">
+                    <label for="len">Taille du mot de passe</label>
+                    <input id="len" value="20" type="number" min="4" max="40" />
+                </div>
+                <div class="form-control">
+                    <label for="upper">Contient des lettres majuscules</label>
+                    <input id="upper" type="checkbox">
+                </div>
+                <div class="form-control">
+                    <label for="lower">Contient des lettres minuscules</label>
+                    <input id="lower" type="checkbox">
+                </div>
+                <div class="form-control">
+                    <label for="number">Contient des nombres</label>
+                    <input id="number" type="checkbox">
+                </div>
+                <div class="form-control">
+                    <label for="symbol">Contient des symboles</label>
+                    <input id="symbol" type="checkbox">
+                </div>
+                <button class="generate" id="generate">Générer mot de passe</button>
+            </div>
+        </div>
     </body>
 </html>
