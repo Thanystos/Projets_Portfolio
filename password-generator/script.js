@@ -34,8 +34,26 @@ function generatePassword() {
 
     let password = '';
 
-    // On récupère autant de caractères que la taille du mot de passe
-    for(let i=0; i<len; i++) {
+    // On s'assure qu'on ait au minimum 1 caractère répondant à chacuns des critères voulus
+    if(upperEl.checked) {
+        // On génére un caractère associé aléatoire
+        password += getUppercase();
+    }
+
+    if(lowerEl.checked) {
+        password += getLowercase();
+    }
+
+    if(numberEl.checked) {
+        password += getNumber();
+    }
+
+    if(symbolEl.checked) {
+        password += getSymbol();
+    }
+
+    // L'initialisation de la boucle permet de ne pas avoir plus de caractères que demandés
+    for(let i=password.length; i<len; i++) {
         // Puis on fait des vérifications
         const x = generateX();
         password += x
@@ -64,8 +82,20 @@ function generateX() {
         xs.push(getSymbol());
     }
 
+    if(xs.length === 0) {
+        return "";
+    }
+
     // On retourne aléatoirement le caractère d'une des fonctions autorisées
     return xs[Math.floor(Math.random() * xs.length)];
 }
 
 generateEl.addEventListener('click', generatePassword);
+
+// Nouvelle facon de se servir du presse papier
+copyEl.addEventListener('click', () => {
+    let copyText = pwEl.innerText;
+    navigator.clipboard.writeText(copyText).then(() => {
+        alert("Copié dans le presse papier !");
+    });
+});
