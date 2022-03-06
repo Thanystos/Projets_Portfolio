@@ -5,7 +5,7 @@ const form = document.getElementById('form');
 const search = document.getElementById('search');
 
 const url = (city) =>
-    `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}`;
+    `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=fr&appid=${apikey}`;
 
 async function getWeatherByLocation(city) {
     // Ici il faut préciser ce 2ème argument pour éviter d'avoir une erreur CORS
@@ -24,9 +24,12 @@ function addWeatherToPage(data) {
     weather.classList.add('weather');
 
     weather.innerHTML = `
-        <small>Il fait</small>
-        <h2>${temp}°C</h2>
-        <p>à ${search.value}</p>
+        <h2>
+            <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" />
+            ${temp}°C
+            <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" />
+        </h2>
+        <small>${data.weather[0].description}</small>
     `;
 
     // On vide le main pour éviter d'afficher plusieurs résultats...
@@ -36,7 +39,7 @@ function addWeatherToPage(data) {
 
 // Convertit les kelvin en celsius
 function KtoC(K) {
-    return (K - 273.15).toFixed(2); // 2 nombres après la virgule
+    return Math.floor(K - 273.15);
 }
 
 form.addEventListener('submit', (e) => {
